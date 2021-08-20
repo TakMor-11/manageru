@@ -1,7 +1,6 @@
 class ManageController < ApplicationController
-
     before_action :authenticate_user!
-
+    
     def index
 
     end
@@ -9,4 +8,5 @@ class ManageController < ApplicationController
     def start
 
     end
+
 end
