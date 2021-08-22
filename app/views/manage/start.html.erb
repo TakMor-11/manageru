@@ -1,3 +1,7 @@
 <h1>さぁ、始めよう！</h1>
 
+<% if user_signed_in? %>
+<%= link_to "マイページへ", user_path(current_user.id) %>
+<% end %>
+
 <%= button_to "ログアウト", destroy_user_session_path, method: :delete %>

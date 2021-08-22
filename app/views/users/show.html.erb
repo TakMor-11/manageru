@@ -1,0 +1,15 @@
+<h1>Users#show</h1>
+<p>Find me in app/views/users/show.html.erb</p>
+
+<%= button_to "ログアウト", destroy_user_session_path, method: :delete %>
+
+<p>名前 : <%= @user.name %></p>
+<p>1日の目標時間 : <%= @user.hpd %></p>
+<p>活動：休憩のバランス : <%= @user.act %> <%= @user.rest %></p>
+
+<% if current_user.id == @user.id %>
+    <%= link_to "編集する", edit_user_registration_path %>
+    <br>
+    <%= link_to "今日を始める！", manage_start_path %>
+<% end %>
+
