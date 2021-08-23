@@ -1,0 +1,19 @@
+<h1>タスクを追加する</h1>
+
+<%= form_for @manage, :url => {:controller => :manage, :action => :create}　do |f| %>
+    <div class="field">
+        <%= f.label :task %>
+        <%= f.text_field :task, :size => 140 %>
+        <%= f.label :"期限日" %>
+        <%= f.date_select :due %>
+        <%= f.label :"目標総時間" %>
+        <%= f.text_field :totaltime, :size => 40 %>
+        <%= f.label :"急ぎ具合" %>
+        <%= f.select :hurry, {'普通':1, '少し急ぎ':2, 'やや急ぎ':3, '急ぎ':4, '大急ぎ':5}, :prompt => '選択してください' %>
+    </div>
+    <%= f.submit "追加する!" %>
+<% end %>
+
+<% if user_signed_in? %>
+    <%= link_to "マイページへ", user_path(current_user.id) %>
+<% end %>
